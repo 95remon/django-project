@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+<br>
+<br>
+
+<form method="POST" action="/donation">
+  {% csrf_token %}
+  <div>
+      <br>
+      <p>
+          <h3>Enter Details</h3>
+      </p>
+      <div>
+          <p>Donation Id:</p>{{ form.did }}
+      </div>
+      <div>
+          <p>Donation Name::</p>{{ form.dname }}
+      </div>
+      <div>
+          <p>Donation Contnet:</p>{{ form.dcontent }}
+      </div>
+      <div>
+          <br>
+          <button type="submit">Submit</button>
+      </div>
+  </div>
+</form>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+{% endblock content %}

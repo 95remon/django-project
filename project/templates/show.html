@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+<br>
+<br>
+
+
+
+
+<div class="row m-5 justify-content-center align-items-center">
+<table class="table table-bordered">
+    <thead>
+        <thead>
+            <tr>
+                <th>Donation ID</th>
+                <th>Donation Name</th>
+                <th>Donation Content</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+    </thead>
+    <tbody>
+        {% for dontaion in donations %}
+        <tr>
+            <td>{{ dontaion.did }}</td>
+            <td>{{dontaion.dname}}</td>
+            <td>{{dontaion.dcontent}}</td>
+            <td>
+                <a class="btn btn-outline-success" href="/edit/{{ dontaion.id }}" role="button">Edit</a>
+                
+                <a class="btn btn-outline-danger" href="/delete/{{dontaion.id}}" role="button">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+{% endblock content %}
